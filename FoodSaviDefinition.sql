@@ -4,7 +4,11 @@ DROP DATABASE FoodSavi
 
 CREATE DATABASE FoodSavi
 
+GO
+
 USE FoodSavi;
+
+GO
 
 CREATE TABLE FoodType (
 	FoodTypeID [int] IDENTITY(1,1) NOT NULL,
