@@ -36,4 +36,4 @@ VALUES ('Butter'),
 ('Green Beans'),
 ('Broccoli Florets')
 
-GO;
+GO

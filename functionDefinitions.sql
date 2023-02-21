@@ -2,6 +2,16 @@ USE FoodSavi;
 
 GO
 
+DROP FUNCTION count_donations_to_charity
+
+DROP FUNCTION food_type_donated
+
+DROP FUNCTION find_store_from_donation
+
+DROP FUNCTION count_store_donations
+
+GO
+
 CREATE FUNCTION count_donations_to_charity (
 	@CharityID int
 )
@@ -18,7 +28,7 @@ GO
 CREATE FUNCTION food_type_donated(
 	@DonationID int
 )
-RETURNS VARCHAR
+RETURNS VARCHAR(max)
 AS
 BEGIN
 	DECLARE @retreivedFoodID int
@@ -29,7 +39,7 @@ BEGIN
 	SELECT @FoodtypeID = FoodTypeID FROM [dbo].FoodStock
 	WHERE FoodID = @retreivedFoodID 
 
-	DECLARE @ReturnValue varchar
+	DECLARE @ReturnValue varchar(MAX)
 	SELECT @ReturnValue = FoodType FROM [dbo].FoodType
 	WHERE FoodTypeID = @FoodtypeID
 
