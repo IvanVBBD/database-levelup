@@ -29,6 +29,6 @@ GO
 
 -- Expiry Date Checks
 
-ALTER TABLE [dbo].[FoodStock]
-	ADD CONSTRAINT [CHK_FoodStock_ExpiryDate_Before_Today] CHECK (ExpirationDate < GETDATE())
+ALTER TABLE [dbo].[FoodStock] WITH NOCHECK
+	ADD CONSTRAINT [CHK_FoodStock_ExpiryDate_Before_Today] CHECK (ExpirationDate > GETDATE())
 GO

@@ -1,6 +1,6 @@
 USE FoodSavi;
 
-INSERT INTO FoodType (type)
+INSERT INTO FoodType (FoodType)
 VALUES ('Butter'),
 ('Cheddar cheese'),
 ('Milk'),
