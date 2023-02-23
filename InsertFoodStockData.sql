@@ -1,7 +1,7 @@
 USE FoodSavi;
 GO
 
-INSERT INTO FoodStock(FoodTypeID,StoreID,SellByDate,ExpirationDate,Barcode)
+INSERT INTO FoodStock(foodTypeID,storeID,sellByDate,expirationDate,barcode)
 VALUES
   (8,56,'Mar 11, 2022','Sep 15, 2023',179301),
   (2,36,'Mar 10, 2022','Mar 24, 2023',132198),
