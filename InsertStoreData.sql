@@ -1,6 +1,6 @@
 USE FoodSavi;
 SET ANSI_WARNINGS OFF
-INSERT INTO Store (StoreName, Address, StoreNumber)
+INSERT INTO Store (storeName, addressID, storeNumber)
 VALUES ('AERENS SUPERMARKET',1,5043029875),
 ('ADAMS FOOD STORE #3',2,5048611120),
 ('A & JS MART',3,5043944410),

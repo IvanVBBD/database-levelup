@@ -1,6 +1,6 @@
 USE FoodSavi;
 SET ANSI_WARNINGS OFF
-INSERT INTO Charity (CharityName, Address, CharityNumber)
+INSERT INTO Charity (charityName, addressID, charityNumber)
 VALUES ('PALMER SECOND BAPTIST CHURCH',204,19818),
 ('ST GEORGE CATHEDRAL',205,29215),
 ('IGLESIA BETHESDA INC',206,587764),

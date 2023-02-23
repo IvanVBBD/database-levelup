@@ -1,13 +1,13 @@
 USE FoodSavi;
 GO
 
-CREATE PROCEDURE  manipulateTable	(@FoodID		  INTEGER,
-									 @FoodTypeID     INTEGER,
-                                     @StoreID		  INTEGER,
-                                     @SellByDate     DATE,
-                                     @ExpirationDate DATE,
-                                     @Barcode        VARCHAR(30),
-                                     @StatementType NVARCHAR(20) = '')
+CREATE PROCEDURE  manipulateTable	(@foodTypeID		  INTEGER,
+									                @type     INTEGER,
+                                  @storeID		  INTEGER,
+                                  @sellByDate     DATE,
+                                  @expirationDate DATE,
+                                  @barcode        VARCHAR(30),
+                                  @statementType NVARCHAR(20) = '')
 AS
   BEGIN
       IF @StatementType = 'Insert'

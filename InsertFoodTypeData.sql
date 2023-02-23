@@ -1,6 +1,6 @@
 USE FoodSavi;
 
-INSERT INTO FoodType (FoodType)
+INSERT INTO FoodType (type)
 VALUES ('Butter'),
 ('Cheddar cheese'),
 ('Milk'),
@@ -28,7 +28,7 @@ VALUES ('Butter'),
 ('Sweet Peas'),
 ('Green Bell Peppers'),
 ('Dark Chocolate Bar'),
-('Oats ‘N Honey Crunchy Granola Bars'),
+('Oats ï¿½N Honey Crunchy Granola Bars'),
 ('Rice Pilaf: Roasted Almond Flavor'),
 ('Whole Wheat Penne Pasta'),
 ('Macaroni & Cheese'),
