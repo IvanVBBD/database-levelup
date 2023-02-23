@@ -34,7 +34,7 @@ CREATE TABLE [Address] (
 CREATE TABLE Store (
 	StoreID [int] IDENTITY(1,1) NOT NULL,
 	StoreName [varchar] NOT NULL,
-	[Address] [int] NOT NULL,
+	AddressID [int] NOT NULL,
 	StoreNumber [varchar] (15) NOT NULL
 	CONSTRAINT [PK_Store] PRIMARY KEY CLUSTERED 
 	(
@@ -45,7 +45,7 @@ CREATE TABLE Store (
 CREATE TABLE Charity (
 	CharityID [int] IDENTITY(1,1) NOT NULL,
 	CharityName [varchar] NOT NULL,
-	[Address] [int] NOT NULL,
+	AddressID [int] NOT NULL,
 	CharityNumber [varchar](15) NOT NULL
 	CONSTRAINT [PK_Charity] PRIMARY KEY CLUSTERED 
 	(
@@ -54,7 +54,7 @@ CREATE TABLE Charity (
 );
 
 CREATE TABLE FoodStock (
-	FoodID [int] IDENTITY(1,1) NOT NULL,
+	FoodStockID [int] IDENTITY(1,1) NOT NULL,
 	FoodTypeID [int] NOT NULL,
 	StoreID [int] NOT NULL,
 	SellByDate [date] NOT NULL,
@@ -62,13 +62,13 @@ CREATE TABLE FoodStock (
 	Barcode [varchar](30) NOT NULL
 	CONSTRAINT [PK_FoodStock] PRIMARY KEY CLUSTERED 
 	(
-		FoodID ASC
+		FoodStockID ASC
 	)
 );
 
 CREATE TABLE Donation (
 	DonationID [int] IDENTITY(1,1) NOT NULL,
-	FoodID [int] NOT NULL,
+	FoodStockID [int] NOT NULL,
 	CharityID [int] NOT NULL,
 	DateDonated [date] NOT NULL
 	CONSTRAINT [PK_Donation] PRIMARY KEY CLUSTERED 
