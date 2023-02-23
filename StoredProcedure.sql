@@ -69,13 +69,13 @@ AS
             SET    foodStockID = @foodStockID,
                    charityID = @charityID ,
                    dateDonated = @dateDonated
-            WHERE  donationID = @donationID,
+            WHERE  donationID = @donationID
         END
 
       ELSE IF @StatementType = 'Delete'
         BEGIN
             DELETE FROM Donation
-            WHERE  donationID = @donationID,
+            WHERE  donationID = @donationID
         END
   END
   GO
