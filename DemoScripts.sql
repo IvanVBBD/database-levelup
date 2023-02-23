@@ -33,3 +33,18 @@ DECLARE @curDate date = GETDATE()
 EXEC manipulateDonation @DonationID = 999, @FoodStockID = 1, @CharityID = 5, @DateDonated = @curDate, @StatementType = 'INSERT'
 GO
 
+--- Check how many times a charity has recieved a donation
+
+SELECT [dbo].count_donations_to_charity(5)
+GO
+
+---Check what food they recieved
+
+SELECT [dbo].food_type_donated(101)
+GO
+
+---Check where the food dono came from (Store wise)
+
+SELECT [dbo].find_store_from_donation(101)
+GO
+

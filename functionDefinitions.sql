@@ -55,19 +55,6 @@ BEGIN
 END
 GO
 
-CREATE FUNCTION count_store_donations(
-	@StoreID int
-)
-RETURNS INT
-AS
-BEGIN
-	DECLARE @ReturnValue int
-	DECLARE @TempHolder int
-	SELECT @TempHolder = DonationID FROM [dbo].Donation
-	SELECT @ReturnValue = COUNT(*) FROM [dbo].Donation WHERE [dbo].find_store_from_donation(@TempHolder) = @StoreID
-	RETURN @ReturnValue
-END
-GO
 
 
 
