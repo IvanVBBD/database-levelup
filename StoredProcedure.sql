@@ -45,7 +45,7 @@ AS
 GO
 
 
-CREATE PROCEDURE  manipulateFoodStock	(@donationID    INTEGER,
+CREATE PROCEDURE  manipulateDonation	(@donationID    INTEGER,
 									                    @foodStockID    INTEGER,
                                       @charityID		  INTEGER,
                                       @dateDonated    DATE,
