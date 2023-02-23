@@ -1,6 +1,8 @@
 USE [FoodSavi];
 GO
 
+-- Foreign Keys
+
 ALTER TABLE [dbo].[Store]
 	ADD CONSTRAINT [FK_Store_AddressID_Address] FOREIGN KEY ([AddressID]) REFERENCES [dbo].[Address] ([AddressID]);
 GO
@@ -23,4 +25,10 @@ GO
 
 ALTER TABLE [dbo].[FoodStock]
 	ADD CONSTRAINT [FK_FoodStock_StoreID_Store] FOREIGN KEY ([StoreID]) REFERENCES [dbo].[Store] ([StoreID]);
+GO
+
+-- Expiry Date Checks
+
+ALTER TABLE [dbo].[FoodStock]
+	ADD CONSTRAINT [CHK_FoodStock_ExpiryDate_Before_Today] CHECK (ExpirationDate < GETDATE())
 GO

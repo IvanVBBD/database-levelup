@@ -1,6 +1,8 @@
 USE [FoodSavi];
 GO
 
+-- Foreign Keys
+
 ALTER TABLE [dbo].[Store]
 	DROP CONSTRAINT [FK_Store_AddressID_Address]
 GO
@@ -23,4 +25,10 @@ GO
 
 ALTER TABLE [dbo].[FoodStock]
 	DROP CONSTRAINT [FK_FoodStock_StoreID_Store]
+GO
+
+-- Expiry Date Checks
+
+ALTER TABLE [dbo].[FoodStock]
+	DROP CONSTRAINT [CHK_FoodStock_ExpiryDate_Before_Today]
 GO
