@@ -27,6 +27,8 @@ ALTER TABLE [dbo].[FoodStock]
 	ADD CONSTRAINT [FK_FoodStock_FoodTypeID_FoodType] FOREIGN KEY ([FoodTypeID]) REFERENCES [dbo].[FoodType] ([FoodTypeID]);
 GO
 
+CREATE INDEX [Food_Type_ID_Index] ON [dbo].[FoodStock](FoodStockID);
+
 ALTER TABLE [dbo].[FoodStock]
 	ADD CONSTRAINT [FK_FoodStock_StoreID_Store] FOREIGN KEY ([StoreID]) REFERENCES [dbo].[Store] ([StoreID]);
 GO
