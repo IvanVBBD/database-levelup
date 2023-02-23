@@ -1,8 +1,8 @@
 USE FoodSavi;
 GO
 
-CREATE PROCEDURE  manipulateTable	(@foodTypeID		  INTEGER,
-									                @type     INTEGER,
+CREATE PROCEDURE  manipulateFoodStock	(@foodStockID		  INTEGER,
+									                @foodTypeID     INTEGER,
                                   @storeID		  INTEGER,
                                   @sellByDate     DATE,
                                   @expirationDate DATE,
@@ -13,38 +13,69 @@ AS
       IF @StatementType = 'Insert'
         BEGIN
             INSERT INTO FoodStock
-                        (FoodTypeID,
-                         StoreID,
-                         SellByDate ,
-                         ExpirationDate ,
-                         Barcode )
-            VALUES     ( @FoodTypeID,
-                         @StoreID,
-                         @SellByDate,
-                         @ExpirationDate,
-                         @Barcode)
-        END
-
-      IF @StatementType = 'Select'
-        BEGIN
-            SELECT *
-            FROM   FoodStock
+                        (foodTypeID,
+                         storeID,
+                         sellByDate ,
+                         expirationDate ,
+                         barcode )
+            VALUES     ( @foodTypeID,
+                         @storeID,
+                         @sellByDate,
+                         @expirationDate,
+                         @barcode)
         END
 
       IF @StatementType = 'Update'
         BEGIN
             UPDATE FoodStock
-            SET    FoodTypeID = @FoodTypeID,
-                   StoreID = @StoreID,
-                   SellByDate = @SellByDate ,
-                   ExpirationDate = @ExpirationDate ,
-                   Barcode = @Barcode
-            WHERE  FoodID = @FoodID
+            SET    foodTypeID = @foodTypeID,
+                   storeID = @storeID,
+                   sellByDate = @sellByDate ,
+                   expirationDate = @expirationDate ,
+                   barcode = @barcode
+            WHERE  foodStockID	 = @foodStockID
         END
 
       ELSE IF @StatementType = 'Delete'
         BEGIN
             DELETE FROM FoodStock
-            WHERE  FoodID = @FoodID
+            WHERE  foodStockID	 = @foodStockID
         END
   END
+GO
+
+
+CREATE PROCEDURE  manipulateFoodStock	(@donationID    INTEGER,
+									                    @foodStockID    INTEGER,
+                                      @charityID		  INTEGER,
+                                      @dateDonated    DATE,
+                                      @statementType  NVARCHAR(20) = '')
+AS
+  BEGIN
+      IF @StatementType = 'Insert'
+        BEGIN
+            INSERT INTO Donation
+                        (foodStockID,
+                         charityID ,
+                         dateDonated)
+            VALUES     (@foodStockID,
+                        @charityID,
+                        @dateDonated)
+        END
+
+      IF @StatementType = 'Update'
+        BEGIN
+            UPDATE Donation
+            SET    foodStockID = @foodStockID,
+                   charityID = @charityID ,
+                   dateDonated = @dateDonated
+            WHERE  donationID = @donationID,
+        END
+
+      ELSE IF @StatementType = 'Delete'
+        BEGIN
+            DELETE FROM Donation
+            WHERE  donationID = @donationID,
+        END
+  END
+  GO
