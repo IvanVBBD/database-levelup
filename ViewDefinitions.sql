@@ -9,7 +9,7 @@ AS
 	FROM [dbo].[FoodType] AS fType, [dbo].[FoodStock] AS fStock
 	WHERE 
 		fStock.FoodTypeID = fType.FoodTypeID and
-		fStock.ExpirationDate < GETDATE();
+		fStock.ExpirationDate > GETDATE();
 GO
 
 CREATE VIEW [dbo].[vFoodStockExtended]
@@ -27,5 +27,5 @@ AS
 	WHERE
 		fStock.FoodTypeID = fType.FoodTypeID and
 		fStock.StoreID = [dbo].[Store].StoreID and
-		fStock.ExpirationDate < GETDATE();
+		fStock.ExpirationDate > GETDATE();
 GO
