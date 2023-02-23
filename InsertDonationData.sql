@@ -1,7 +1,7 @@
 USE FoodSavi
 GO
 
-INSERT INTO Donation(FoodID,CharityID,DateDonated)
+INSERT INTO Donation(foodStockID,charityID,dateDonated)
 VALUES
   (53,29,'Mar 3, 2023'),
   (9,16,'Apr 15, 2023'),

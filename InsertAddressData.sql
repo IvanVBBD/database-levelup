@@ -1,6 +1,6 @@
 USE FoodSavi;
 
-INSERT INTO Address( Number, Street, Zipcode)
+INSERT INTO Address( number, street, zipCode)
 VALUES (3911,'WASHINGTON AVE',70125),
 (3001,'BIENVILLE ST',701195401),
 (5163,'GENERAL DE GAULLE DR',70131),
