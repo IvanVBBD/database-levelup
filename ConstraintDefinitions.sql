@@ -19,13 +19,20 @@ ALTER TABLE [dbo].[Donation]
 	ADD CONSTRAINT [FK_Donation_CharityID_Charity] FOREIGN KEY ([CharityID]) REFERENCES [dbo].[Charity] ([CharityID]);
 GO
 
+ALTER TABLE [dbo].[Donation]
+	ADD CONSTRAINT [Unq_Donation_FoodStockID] UNIQUE(FoodStockID);
+GO
+
 ALTER TABLE [dbo].[FoodStock]
 	ADD CONSTRAINT [FK_FoodStock_FoodTypeID_FoodType] FOREIGN KEY ([FoodTypeID]) REFERENCES [dbo].[FoodType] ([FoodTypeID]);
 GO
 
+CREATE INDEX [Food_Type_ID_Index] ON [dbo].[FoodStock](FoodStockID);
+
 ALTER TABLE [dbo].[FoodStock]
 	ADD CONSTRAINT [FK_FoodStock_StoreID_Store] FOREIGN KEY ([StoreID]) REFERENCES [dbo].[Store] ([StoreID]);
 GO
+
 
 -- Expiry Date Checks
 
