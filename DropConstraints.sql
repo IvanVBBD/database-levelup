@@ -2,15 +2,15 @@ USE [FoodSavi];
 GO
 
 ALTER TABLE [dbo].[Store]
-	DROP CONSTRAINT [FK_Store_Address_Address]
+	DROP CONSTRAINT [FK_Store_AddressID_Address]
 GO
 
 ALTER TABLE [dbo].[Charity]
-	DROP CONSTRAINT [FK_Charity_Address_Address]
+	DROP CONSTRAINT [FK_Charity_AddressID_Address]
 GO
 
 ALTER TABLE [dbo].[Donation]
-	DROP CONSTRAINT [FK_Donation_FoodID_FoodStock]
+	DROP CONSTRAINT [FK_Donation_FoodStockID_FoodStock]
 GO
 
 ALTER TABLE [dbo].[Donation]
