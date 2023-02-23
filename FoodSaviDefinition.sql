@@ -24,7 +24,7 @@ CREATE TABLE [Address] (
 	AddressID [int] IDENTITY(1,1) NOT NULL,
 	Number [varchar](7) NOT NULL,
 	Street [varchar](95) NOT NULL,
-	ZipCode [varchar](1) NOT NULL
+	ZipCode [varchar](15) NOT NULL
 	CONSTRAINT [PK_Address] PRIMARY KEY CLUSTERED 
 	(
 		AddressID ASC
@@ -33,7 +33,7 @@ CREATE TABLE [Address] (
 
 CREATE TABLE Store (
 	StoreID [int] IDENTITY(1,1) NOT NULL,
-	StoreName [varchar] NOT NULL,
+	StoreName [varchar](MAX) NOT NULL,
 	AddressID [int] NOT NULL,
 	StoreNumber [varchar] (15) NOT NULL
 	CONSTRAINT [PK_Store] PRIMARY KEY CLUSTERED 
@@ -44,7 +44,7 @@ CREATE TABLE Store (
 
 CREATE TABLE Charity (
 	CharityID [int] IDENTITY(1,1) NOT NULL,
-	CharityName [varchar] NOT NULL,
+	CharityName [varchar](MAX) NOT NULL,
 	AddressID [int] NOT NULL,
 	CharityNumber [varchar](15) NOT NULL
 	CONSTRAINT [PK_Charity] PRIMARY KEY CLUSTERED 
