@@ -7,9 +7,12 @@ AS
 		fType.FoodType,
 		fStock.ExpirationDate
 	FROM [dbo].[FoodType] AS fType, [dbo].[FoodStock] AS fStock
+	LEFT JOIN [dbo].[Donation]
+	ON fStock.FoodStockID = [dbo].[Donation].FoodStockID
 	WHERE 
 		fStock.FoodTypeID = fType.FoodTypeID and
-		fStock.ExpirationDate > GETDATE();
+		fStock.ExpirationDate > GETDATE() and
+		[dbo].[Donation].FoodStockID IS NULL;
 GO
 
 CREATE VIEW [dbo].[vFoodStockExtended]
@@ -22,10 +25,13 @@ AS
 		[dbo].[Store].StoreName
 	FROM
 		[dbo].[FoodType] AS fType,
-		[dbo].[FoodStock] AS fStock,
-		[dbo].[Store]
+		[dbo].[Store],
+		[dbo].[FoodStock] AS fStock
+	LEFT JOIN [dbo].[Donation]
+	ON fStock.FoodStockID = [dbo].[Donation].FoodStockID
 	WHERE
 		fStock.FoodTypeID = fType.FoodTypeID and
 		fStock.StoreID = [dbo].[Store].StoreID and
-		fStock.ExpirationDate > GETDATE();
+		fStock.ExpirationDate > GETDATE() and
+		[dbo].[Donation].FoodStockID IS NULL
 GO
