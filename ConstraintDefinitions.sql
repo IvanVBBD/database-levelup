@@ -2,15 +2,15 @@ USE [FoodSavi];
 GO
 
 ALTER TABLE [dbo].[Store]
-	ADD CONSTRAINT [FK_Store_Address_Address] FOREIGN KEY ([Address]) REFERENCES [dbo].[Address] ([AddressID]);
+	ADD CONSTRAINT [FK_Store_AddressID_Address] FOREIGN KEY ([AddressID]) REFERENCES [dbo].[Address] ([AddressID]);
 GO
 
 ALTER TABLE [dbo].[Charity]
-	ADD CONSTRAINT [FK_Charity_Address_Address] FOREIGN KEY ([Address]) REFERENCES [dbo].[Address] ([AddressID]);
+	ADD CONSTRAINT [FK_Charity_AddressID_Address] FOREIGN KEY ([AddressID]) REFERENCES [dbo].[Address] ([AddressID]);
 GO
 
 ALTER TABLE [dbo].[Donation]
-	ADD CONSTRAINT [FK_Donation_FoodID_FoodStock] FOREIGN KEY ([FoodID]) REFERENCES [dbo].[FoodStock] ([FoodID]);
+	ADD CONSTRAINT [FK_Donation_FoodStockID_FoodStock] FOREIGN KEY ([FoodStockID]) REFERENCES [dbo].[FoodStock] ([FoodStockID]);
 GO
 
 ALTER TABLE [dbo].[Donation]
