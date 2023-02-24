@@ -32,6 +32,17 @@ AS
 	WHERE
 		fStock.FoodTypeID = fType.FoodTypeID and
 		fStock.StoreID = [dbo].[Store].StoreID and
-		fStock.ExpirationDate > GETDATE() and
-		[dbo].[Donation].FoodStockID IS NULL
+		fStock.ExpirationDate > GETDATE();
+GO
+
+CREATE VIEW [dbo].[vStoreDetails]
+AS
+	SELECT
+		str.StoreName,
+		addr.Number,
+		addr.Street,
+		addr.ZipCOde
+	FROM [dbo].[Store] AS str
+	INNER JOIN [dbo].[Address] AS addr
+	ON str.AddressID = addr.AddressID
 GO
